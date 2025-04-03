@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Single Player | Dynamic Tic Tac Toe</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="sp_op.css">
+</head>
+
+<body>
+    <div class="game-wrapper">
+        <div class="game-header">
+            <div class="game-title">
+                <h1>One-Player Tic Tac Toe</h1>
+                <div class="subtitle">A classic game for one player</div>
+            </div>
+            <div class="home-button" onclick="goHome()">
+                <i class="fas fa-close"></i> 
+            </div>
+            <div class="sound-button" id="sound-toggle" onclick="toggleSound()">
+                <i id="sound-icon" class="fas fa-volume-up"></i>
+            </div>
+        </div>  
+        
+        <div class="game-info">
+            <div class="info-header" onclick="toggleInfo()">
+                <i class="fas fa-info-circle"></i> How to Play
+            </div>
+            <div class="info-box" id="info-box" onclick="toggleInfo()">
+                <ul>
+                    <li>In this Dynamic version, As the 7th mark is placed, the oldest mark gets removed.</li>
+                    <li>In order to avoid the draw situation we have to keep 3 spaces empty always.</li>
+                    <li>The small number at the corner of each cell shows the move order.</li>
+                    <li>Player "O" plays first..!!</li>
+                    <li>Always mind your next step before marking any cell. Check which of your mark is the oldest.</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="game-container">
+            <div class="status-container">
+                <div class="status" id="status">
+                    Player O's turn <span style="color: #3a86ff;">O</span>
+                </div>
+                <!-- <div class="player-indicator o" id="player-indicator">O</div> -->
+            </div>
+            
+            <div class="board-container">
+                <div class="thinking" id="thinking">
+                    AI (<span style="color: #ff006e;">X</span>) is thinking... 🤖
+                </div>
+                <div class="board" id="board">
+                    <div class="cell" data-index="0"></div>
+                    <div class="cell" data-index="1"></div>
+                    <div class="cell" data-index="2"></div>
+                    <div class="cell" data-index="3"></div>
+                    <div class="cell" data-index="4"></div>
+                    <div class="cell" data-index="5"></div>
+                    <div class="cell" data-index="6"></div>
+                    <div class="cell" data-index="7"></div>
+                    <div class="cell" data-index="8"></div>
+                </div>
+            </div>
+            
+        <div class="controls">
+            <button id="reset-btn"><i class="fas fa-redo-alt"></i> Reset Game</button>
+            <button id="switch-sides-btn" class="secondary" style="display: none;">
+                <i class="fas fa-exchange-alt"></i> Switch Sides
+            </button>
+        </div>
+            
+            <div class="move-history">
+                <h3><i class="fas fa-history"></i> Move History</h3>
+                <div class="moves-list" id="moves-list">
+                    <!-- Move history will be populated here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    
+
+    <script src="sp_op.js"></script>
+</body>
+</html>
