@@ -70,8 +70,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const winSound = new Audio("win.mp3");
 
     function playWinSound() {
-        winSound.currentTime = 0;  // Reset to start for quick replays
-        winSound.play();
+        if (soundEnabled) {
+            winSound.currentTime = 0;  // Reset to start for quick replays
+            winSound.play();
+        }
     }
 
     // Attach event listener (if using <button>)
@@ -118,17 +120,21 @@ document.addEventListener("DOMContentLoaded", () => {
     function removeOldestMove() {
         if (moveSequence.length === 0) return;
     
-        let oldestMove = moveSequence.shift(); // Remove the first (oldest) move from the sequence
+        let oldestMove = moveSequence.shift(); // Remove the first (oldest) move
         let cellIndex = oldestMove.index;
+        let player = oldestMove.player;
+        let moveNum = oldestMove.moveNumber;
     
         // Remove only from the board, NOT from the move history
         if (!board[cellIndex].classList.contains("win-highlight")) {
             gameBoard[cellIndex] = "";
             board[cellIndex].innerText = "";
-        }
     
-        // **Do NOT remove move history**
+            // Add to removal history
+            addRemovalToHistory(player, cellIndex, moveNum);
+        }
     }
+    
 
     window.goHome = function () {
         window.location.href = "index.html"; // Change if home page has a different filename
@@ -160,6 +166,19 @@ document.addEventListener("DOMContentLoaded", () => {
         movesList.appendChild(moveItem);
         movesList.scrollTop = movesList.scrollHeight;
     }
+
+    function addRemovalToHistory(player, cellIndex, moveNum) {
+        const moveItem = document.createElement('div');
+        moveItem.classList.add('move-item');
+        moveItem.innerHTML = `
+            <span>Removed #${moveNum}</span>
+            <span class="move-player ${player.toLowerCase()}">${player} ← Cell ${cellIndex + 1}</span>
+        `;
+        movesList.appendChild(moveItem);
+        // Scroll to bottom
+        movesList.scrollTop = movesList.scrollHeight;
+    }
+    
 
     function resetGame() {
         gameActive = false;
