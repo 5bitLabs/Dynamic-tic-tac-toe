@@ -92,8 +92,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const winSound = new Audio("win.mp3");
 
     function playWinSound() {
-        winSound.currentTime = 0;  // Reset to start for quick replays
-        winSound.play();
+        if (soundEnabled) {
+            winSound.currentTime = 0;  // Reset to start for quick replays
+            winSound.play();
+        }
     }
 
     function updateStatus() {
@@ -205,6 +207,8 @@ document.addEventListener("DOMContentLoaded", () => {
         if (oldestMove && !board[oldestMove.index].classList.contains("win-highlight")) {
             gameBoard[oldestMove.index] = "";
             board[oldestMove.index].innerText = "";
+            addRemovalToHistory(oldestMove.player, oldestMove.index, oldestMove.moveNumber, oldestMove.isAI);
+
         }
     
         // **Recheck for winner after move removal**

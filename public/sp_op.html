@@ -3,12 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="favicon_icon.png" type="image/x-icon" />
     <title>Single Player | Dynamic Tic Tac Toe</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="sp_op.css">
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8535750126446931"
+        crossorigin="anonymous"></script>
 </head>
 
 <body>
+    <div id="particles-js"></div>
     <div class="game-wrapper">
         <div class="game-header">
             <div class="game-title">
@@ -24,7 +29,7 @@
         </div>  
         
         <div class="game-info">
-            <div class="info-header" onclick="toggleInfo()">
+            <div class="info-header" onclick="toggleInfo()"> <!--can also use mouseover event-->
                 <i class="fas fa-info-circle"></i> How to Play
             </div>
             <div class="info-box" id="info-box" onclick="toggleInfo()">
@@ -79,9 +84,16 @@
         </div>
     </div>
 
-    
-    
-
     <script src="sp_op.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="app.js"></script>
+    <script src="particles.min.js"></script>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <p>Copyright &copy; 2025 <span class="company-name">5bitLabs™</span>. All rights reserved.</p>
+            <p>Contact us: <a href="mailto:fivebitlabs@gmail.com">fivebitlabs@gmail.com</a></p>
+        </div>
+    </footer>
 </body>
 </html>
