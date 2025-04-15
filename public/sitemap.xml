@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+<url>
+  <loc>https://5bitlabs.com/</loc>
+  <lastmod>2025-04-14T16:57:37+00:00</lastmod>
+</url>
+
+<url>
+  <loc>https://5bitlabs.com/sp_op.html</loc>
+  <lastmod>2025-04-15T18:51:47+00:00</lastmod>
+</url>
+
+<url>
+  <loc>https://5bitlabs.com/sp_tp.html</loc>
+  <lastmod>2025-04-15T18:52:44+00:00</lastmod>
+</url>
+
+<url>
+  <loc>https://dynamic-tic-tac-toe.5bitlabs.com/</loc>
+  <lastmod>2025-04-14T22:33:13+00:00</lastmod>
+</url>
+
+<url>
+  <loc>https://dynamic-tic-tac-toe.5bitlabs.com/sp_op.html</loc>
+  <lastmod>2025-04-15T18:56:28+00:00</lastmod>
+</url>
+
+<url>
+  <loc>https://dynamic-tic-tac-toe.5bitlabs.com/sp_tp.html</loc>
+  <lastmod>2025-04-15T18:54:42+00:00</lastmod>
+</url>
+
+</urlset>
